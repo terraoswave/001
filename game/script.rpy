@@ -2,36 +2,56 @@
 
 # Declare characters used by this game. The color argument colorizes the name of the character.
 
-define s = Character("Saintess") # narasi dengan nama karakter
+define s = Character("Saintess") # narasi dengan nama karakter Character("Saintess", color="#ffb200")
 define b = Character("") # narasi tanpa nama
-
+define k = Character("Knight")
 # Resize transform
 transform resize:
     zoom 0.4  # mengatur ukuran
+
+init:
+    $ config.default_text_cps = 20  # kecepatan huruf per detik (cps = characters per second)
+
 
 # The game starts here.
 label start:
 
     scene village
+    with fade
 
     # Show character using corrected transform syntax
-    
+    # Show itu cuman mengganti gackground images, scene menghapus semua sprite dan gambar
 
-    b "This is the story of a young girl who wants to become a saintess."
+    b "Ini adalah cerita mengenai seorang wanita yang kelak dipanggil seorang Saintess"
 
-    b "She doesn't have any skills or devotion. She just thinks being a saintess is cool."
+    b "Dia yatim piatu yang dibesarkan di sebuah desa terpencil."
+
+    b "Dia sangat di sayangi oleh penduduk sekitar karena ke sopanan dan keramahan dia, dan diapun menyukai bermain dengan anak kecil"
     
     show saintess at right, resize
-    with fade # fade itu semuanya satu layar cuk
+    with moveinright # fade itu semuanya satu layar cuk
 
-    s "Today's prayer is done. I need to do more work for the village."
+    s "Ibadah hari ini sudah selesai, saatnya melakukan pekerjaan lainnya lagi."
 
-    s "I need to wash the clothes, cooking and maybe check on the kids for now."
+    Character("Saintess", color="#ffb200") "Aku harus mencuci baju, menjemurnya dan memasak untuk siang nanti" #name beda warna
 
-    b "This repeated peaceful days always make the village feels safe, but there are always something in the dark lurking around."
+    b "Siang itu, terdapat hal yang aneh terjadi di luar desa."
 
-    Character("Kid 1") "Sister, Sister."
+    Character("Kid 1") "Kakak - kakak."
 
-    s "What happened ?"
+    s "Ada apa ?"
+
+    Character("Kid 2") "Itu disana"
+    Character("Kid 3") "Itu - itu"
+    Character("Kid 1") "Itu ada orang - orang aneh diluar desa"
+
+    s "Hmmm dia seorang kesatria, mungkin dia sedang membasmi monster di sekitar sini"
+
+    show knight at left, resize 
+    with moveinleft
+
+    k "Halo selamat siang, Saya adalah kapten dari kesatria Singa putih"
 
     return
+
+

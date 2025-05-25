@@ -1,7 +1,16 @@
 ﻿################################################################################
 ## Initialization
 ################################################################################
+label splashscreen:
 
+    scene black with fade
+    show text "This is a work of fiction.\nAny resemblance to real people, places, or events is purely coincidental." at truecenter
+    with dissolve
+
+    $ renpy.pause(4.0)  # Pause for 4 seconds
+
+    return
+#This is work of fiction
 init offset = -1
 
 
