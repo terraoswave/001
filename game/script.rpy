@@ -5,9 +5,19 @@
 define s = Character("Saintess") # narasi dengan nama karakter Character("Saintess", color="#ffb200")
 define b = Character("") # narasi tanpa nama
 define k = Character("Knight")
+define m = Character("Mysterious Person 1")
+
+
 # Resize transform
 transform resize:
     zoom 0.4  # mengatur ukuran
+
+
+transform scale_background:
+    zoom 0.9
+    xalign 0.5
+    yalign 0.5  
+    #zoom 0.75  # ubah ke ukuran proporsional
 
 init:
     $ config.default_text_cps = 20  # kecepatan huruf per detik (cps = characters per second)
@@ -16,7 +26,7 @@ init:
 # The game starts here.
 label start:
 
-    scene village
+    scene village at scale_background
     with fade
 
     # Show character using corrected transform syntax
@@ -51,6 +61,29 @@ label start:
     with moveinleft
 
     k "Halo selamat siang, Saya adalah kapten dari kesatria Singa putih"
+
+    s "Iya, ada yang bisa di bantu ?"
+
+    k "Apakah kalian melihat ada hal - hal yang aneh di sekitar sini ?"
+    
+    s "Hal - hal aneh seperti apa memangnya?"
+
+    k "Jika tidak tahu tidak apa, monster di sekitar sini terlihat aneh, jadi berhati - hatilah"
+
+    s "Baiklah pak, tolong berhati - hatilah juga"
+
+    scene plain monster at scale_background
+    with fade
+
+
+    b "Setelah itu para kesatria pergi dari desa, sementara itu di tempat lain ..."
+
+    m "Apakah itu sudah bisa digunakan ?"
+
+    Character("Mysterious Person 2") "Haduh... saat ini masih belum bisa boss"
+
+    Character("Boss ?") "Cepat segera kerjakan, kita masih butuh banyak monster untuk menyerang Ibu kota"
+
 
     return
 
