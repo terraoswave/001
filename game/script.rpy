@@ -26,8 +26,12 @@ label start:
 
     s "Today's prayer is done. I need to do more work for the village."
 
-    s "I need to wash the clothes, "
+    s "I need to wash the clothes, cooking and maybe check on the kids for now."
 
-    s "Congratulations."
+    b "This repeated peaceful days always make the village feels safe, but there are always something in the dark lurking around."
+
+    Character("Kid 1") "Sister, Sister."
+
+    s "What happened ?"
 
     return
