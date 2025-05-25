@@ -1,12 +1,17 @@
-Concept
+Story Concept
+title
+story narative
 
-Design 
 
-Main Menu
+Character Concept
 
-GUI
+Design (Character, BG) 
 
-Option
+Music (BGM)
 
-Character
+Main Menu (UI Design)
+
+Option (Option Design)
+
+
 
