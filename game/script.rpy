@@ -7,6 +7,21 @@ define b = Character("") # narasi tanpa nama
 define k = Character("Knight")
 define m = Character("Mysterious Person 1")
 
+init python:
+    def screen_shake():
+        renpy.with_statement(None)
+        renpy.scene()
+        renpy.show("village", at_list=[shake])
+        renpy.pause(0.3)
+        renpy.show("village")
+
+transform shake:
+    linear 0.05 xoffset -15
+    linear 0.05 xoffset 15
+    linear 0.05 xoffset -10
+    linear 0.05 xoffset 10
+    linear 0.05 xoffset 0
+
 
 # Resize transform
 transform resize:
@@ -21,6 +36,7 @@ transform scale_background:
 
 init:
     $ config.default_text_cps = 20  # kecepatan huruf per detik (cps = characters per second)
+
 
 
 # The game starts here.
@@ -84,6 +100,25 @@ label start:
 
     Character("Boss ?") "Cepat segera kerjakan, kita masih butuh banyak monster untuk menyerang Ibu kota"
 
+    Character("Mysterious Person 2") "Siap Boss"
+
+    Character("Boss ?") "Untuk sekarang, mari kita mempersiapkan diri untuk menyerang desa terdekat dulu"
+
+    scene village at scale_background
+    with fade
+
+    show saintess at right, resize
+    with moveinright
+
+    s "Huh - Huh...."
+
+    s "Melelahkan..."
+
+    s "\"Hari ini sungguh melelahkan, aku harap tidak ada masalah yang akan datang.\""
+
+    $ screen_shake()
+
+    b "Br......."
 
     return
 

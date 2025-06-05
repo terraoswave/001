@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 93: invalid syntax
-    "images/mm background.jpg" at scale_background
-                                ^
+File "game/script.rpy", line 119: invalid syntax
+    screen_shake(village) at scale_background
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May 25 18:48:34 2025
+Thu Jun  5 20:12:53 2025
